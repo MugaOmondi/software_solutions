@@ -1,0 +1,8 @@
+{
+  "name": "Hekima Hub",
+  "description": "Smart IT solutions and custom software systems for modern global infrastructure, including ERP, POS, and School Management systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

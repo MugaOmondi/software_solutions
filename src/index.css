@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-primary: #aa3000;
+  --color-primary-container: #d43f00;
+  --color-on-primary: #ffffff;
+  
+  --color-surface: #f9f9f9;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #5c4037;
+  
+  --color-inverse-surface: #2f3131;
+  --color-inverse-on-surface: #f0f1f1;
+  
+  --color-outline: #916f65;
+  --color-outline-variant: #e6beb2;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    @apply bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30;
+  }
+  
+  .ambient-shadow {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .ambient-shadow:hover {
+    box-shadow: 0 20px 40px -15px rgba(170, 48, 0, 0.08);
+  }
+
+  .text-gradient {
+    @apply bg-linear-to-r from-primary to-primary-container bg-clip-text text-transparent;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
