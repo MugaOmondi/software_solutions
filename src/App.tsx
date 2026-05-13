@@ -238,20 +238,32 @@ export default function App() {
               <h2 className="font-display text-4xl md:text-5xl font-bold">Driven by Technical Prowess</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { name: "Chief Architect", role: "Software Systems", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAk6c52CUJZVWLKlOyWm-8tu-9PNSWqSM6_q8OGy-xknSnLKd9dLWzDndO_aWCo47QNIprgQnmDsW9YIaYwnixOJkrQscEibdgx-vIzmEs_4QvLvfhwlnso04UbVDXGnhDHfBjQXvtpsxxeMLXoh5a6XXAolb8DGD6R113z5SJZIv363PQcOTu7dn0Fedm4QozlqY7YG5ZxR6Zhv9WjmLB1iKXAPSjjrBAb0yIaOxtbYlAMU-tMtmgi14qScWRuJLfl3SDPmxeqXoOL" },
-                { name: "Creative Lead", role: "Web Design", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDuk-al01XJbbUu81aD1LM9uvS7VLs1xxcndpDHSt4K7HjcZKXz_0IoxWbP03w81Kj1ImeUil2JF8Tb_7F6wGZpn-BWDwG6L_53LH3bQjCFVdNYuVtbMZkAuuQBtroC4HSV0-Zs3eqddd7NC-0JMBy-TcbDKNBqJcyvif2cpKi_eHA-wwxT_E8NgWO89Rx-2NnZk0yRPIIDDhNl-kw9i9XlLCgEiUF19wQbUrwofo2r4FZpsQGc4WE4v836iVjtInbsRwxCsq2bVPj-" },
-                { name: "Lead Consultant", role: "IT Strategy", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXq_rTL-5EMkm1O4DhfPK0x5oD8sHZoJfKzGsIuNmFQwgEJEh_Bo8nd3ftRYnInKAtoYO5jLySEUZHE38VyDPC9gH5rudj1EVrgTuLUiSHXhcQWTUXKGkskPuxGt-ifYIjp44_KjvrpAlPB3Z0TFVzLfC08ENZHLxUenOQLjkNVHQ4jsntog_UlWyLbj4uIgtT6MGeO6YrWjl_0tIrogkRme-wQEDVi_yxeRwNDXBH8EGuwldZDmFk6zZ9v8yejR5udW0b0lcF8nn1" },
-                { name: "Support Head", role: "Operations", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-7Ej-cA7t4HabYZ_AsiAyUtlP_zAGGzt7ahL0AeqbIj1uFUwLjdIgDNKAAv9HTOKwLpoPeUe8KXxSthFjb77nGi5EuZnZhucwRAD5T6GG4aq-RU3r4kTBaMJKCvddzSOR_At1uKplohhc9k-HNCNgb-czehnSoZmDgjn6usbkpOVd9P3rpIDOdsowBPpLVRgp_2U_P4iGBNL33BC_KjPVKpiW9-2pbD6-S_xtu0gPgbTAJJnKyNXl59TNO69RGPzsm1SSlp5490mf" }
+                { 
+                  name: "Hague Ozwara", 
+                  role: "Chief Architect & Creative Lead",
+                  desc: "Information Technology practitioner and Computer Science expert. Excels in infrastructural and architectural design, Software Systems, and IT strategy."
+                },
+                { 
+                  name: "Edgar Omondi", 
+                  role: "Lead Consultant & Support Head",
+                  desc: "Specialist in System analysis and design, Information system audit, and professional issues in IT Operation."
+                }
               ].map((member, i) => (
-                <div key={i} className="group overflow-hidden rounded-2xl bg-white ambient-shadow hover:-translate-y-2 transition-transform duration-300">
-                  <div className="aspect-[4/5] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                    <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6">
-                    <h4 className="font-display font-bold">{member.name}</h4>
-                    <p className="text-primary font-mono text-xs font-bold uppercase mt-1">{member.role}</p>
+                <div key={i} className="group p-10 rounded-2xl bg-white border border-outline-variant ambient-shadow hover:border-primary/30 transition-all duration-300">
+                  <div className="space-y-4">
+                    <div className="inline-block p-3 bg-primary/5 rounded-xl text-primary mb-4">
+                      <Users className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <h4 className="font-display text-2xl font-bold">{member.name}</h4>
+                      <p className="text-primary font-mono text-sm font-bold uppercase mt-1 tracking-wider">{member.role}</p>
+                    </div>
+                    <div className="h-px w-12 bg-primary/20 group-hover:w-full transition-all duration-500" />
+                    <p className="text-on-surface-variant leading-relaxed text-sm lg:text-base opacity-80">
+                      {member.desc}
+                    </p>
                   </div>
                 </div>
               ))}
